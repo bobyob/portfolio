@@ -12,7 +12,7 @@
   <header>
     <h1>Hi, I'm Anthony. 👋 </h1>
     <p> Welcome to my engineering portfolio! I'm an Electrical Engineering (Co-op) student at Toronto Metropolitan University.</p>
-    <p><strong>Seeking a 16-month co-op: May 2027 – August 2028</strong></p>
+    <p><strong>Seeking a co-op position between: May 2027 – August 2028</strong></p>
     <p>
       <a href="mailto:anthony.ma@torontomu.ca">anthony.ma@torontomu.ca</a> ·
       <a href="https://github.com/bobyob">GitHub</a> ·
@@ -36,14 +36,14 @@
 
     
     <figure>
-      <video src="images/BlockBot_Demo.mov" controls muted playsinline></video>
+      <video src="images/BlockBot_Demo.mp4" controls muted playsinline></video>
       <figcaption>BlockBot picking up a scoring block during a trial</figcaption>
     </figure>
 
     <figure class="gallery">
       <div class="gallery-main">
         <button class="gallery-arrow prev" aria-label="Previous photo">‹</button>
-        <img class="gallery-big" src="images/scavengerbot_1.jpg" alt="Scavenger robot, front view">
+        <img class="gallery-big" src="images/scavengerbot_2.jpg" alt="Full robot CAD design">
         <button class="gallery-arrow next" aria-label="Next photo">›</button>
       </div>
 
@@ -146,29 +146,91 @@
   <div class="project">
     <h3>3-Stage CMOS Amplifier</h3>
     <p class="info">KiCad, SPICE · Oct – Dec 2025</p>
-    <ul>
-      <li>Designed a 3-stage amplifier to meet ≥ 60 dB gain, ≥ 500 kHz bandwidth, and ≤ 1 mW power.</li>
-      <li>Ran DC, AC, and transient simulations to check performance.</li>
-      <li>Fixed clipping by retuning the bias resistors and PMOS load voltages.</li>
-    </ul>
-  </div>
+    <!-- Check this date: your lab report says Design Project W2026 -->
 
-  <div class="project">
-    <h3>Autonomous Maze-Solving Robot <span class="tag">In progress</span></h3>
-    <p class="info">HCS12 Assembly · Nov – Dec 2026</p>
-    <p>A robot that finds its way through a maze and remembers the correct path. Course project for COE538.</p>
-  </div>
+    <figure class="gallery">
+      <div class="gallery-main">
+        <button class="gallery-arrow prev" aria-label="Previous photo">‹</button>
+        <img class="gallery-big" src="images/cmos_1.png" alt="KiCad schematic of the 3-stage amplifier">
+        <button class="gallery-arrow next" aria-label="Next photo">›</button>
+      </div>
 
+      <!-- Thumbnails: add one <img> line per photo. The alt text becomes the caption. -->
+      <div class="gallery-thumbs">
+        <img src="images/cmos_1.png" alt="KiCad schematic of the 3-stage amplifier">
+        <img src="images/cmos_2.png" alt="AC analysis: 60.4 dB gain, 59.9 dB at 500 kHz">
+        <img src="images/cmos_3.png" alt="Transient analysis of each stage's output">
+      </div>
+
+      <figcaption></figcaption>
+    </figure>
+
+    <div class="row">
+      <h4 class="row-label">Goals</h4>
+      <ul class="row-list">
+        <li>Voltage gain of at least 60 dB</li>
+        <li>Bandwidth of at least 500 kHz</li>
+        <li>Power under 1 mW and input resistance over 100 kΩ</li>
+        <li>Drive a 10 kΩ load</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <h4 class="row-label">My tasks</h4>
+      <ul class="row-list">
+        <li>Chose a CS → CS → CD topology with PMOS active loads</li>
+        <li>Budgeted current per stage to stay under 1 mW</li>
+        <li>Calculated biasing, gain, and transistor sizing by hand</li>
+        <li>Built the schematic in KiCad and ran DC, AC, and transient simulations</li>
+        <li>Retuned the bias resistors and PMOS load voltages to fix clipping</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <h4 class="row-label">Results</h4>
+      <ul class="row-list">
+        <li>60.4 dB mid-band gain</li>
+        <li>59.9 dB at 500 kHz, only 0.56 dB below maximum</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <h4 class="row-label">Takeaways</h4>
+      <ul class="row-list">
+        <li>Hand calculations are a starting point; channel-length modulation shifted the real bias points</li>
+        <li>How to debug a stage stuck near 0 V or 3.3 V by adjusting its bias</li>
+        <li>Fixed a KiCad "pin assignment" error caused by copy-pasting MOSFETs</li>
+      </ul>
+    </div>
+
+    <figure>
+      <img class="wide" src="images/cmos_4.png" alt="Calculation summary for the 3-stage CMOS amplifier">
+      <figcaption>Full calculation summary</figcaption>
+    </figure>
+  </div>
 
   <!-- ===== EXPERIENCE ===== -->
   <h2>Experience</h2>
+
+  <!-- Toronto Metropolitan Formula Racing -->
   <div class="project">
     <h3>Toronto Metropolitan Formula Racing</h3>
     <p class="info">Low-Voltage Subsystem, Formula SAE Electric · Sept 2025 – Present</p>
-    <ul>
-      <li>Soldered and assembled sensor PCBs for battery-pack integration.</li>
-      <li>Designed a PCB for a battery-pack current sensor using KiCad.</li>
-    </ul>
+
+    <div class="row">
+      <h4 class="row-label">Current work</h4>
+      <ul class="row-list">
+        <li>Developing PWM fan control firmware for the team's custom CAN node PCB, configuring timer-based PWM output to drive the cooling fans</li>
+        <li>Co-developing the board bring-up test plan for the CAN node PCB, including continuity and smoke tests ahead of first power-on</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <h4 class="row-label">Completed</h4>
+      <ul class="row-list">
+        <li>Soldered connectors onto sensor PCBs to prepare them for integration into the vehicle's low-voltage system</li>
+      </ul>
+    </div>
   </div>
 
 
