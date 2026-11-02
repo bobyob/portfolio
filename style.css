@@ -28,18 +28,47 @@ a {
 h1 {
   font-size: 48px;
   margin-bottom: 0;
+  color: var(--accent); 
 }
 
 h2 {
+  font-size: 28px;           
   color: var(--accent);
   border-bottom: 2px solid var(--accent);
   padding-bottom: 4px;
   margin-top: 48px;
 }
 
+/* ===== SECTION LABELS: Projects, Experience ===== */
 h3 {
-  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 18px;           
+  font-weight: 600;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;      
+  margin: 24px 0 2px 0;
 }
+
+h3::after {
+  content: "";
+  flex: 1;                    /* line fills the rest of the row */
+  height: 1px;
+  background: var(--border);
+}
+
+/* ===== h4: bold, underlined, slightly bigger than text ===== */
+h4 {
+  font-size: 18px;              /* normal text is 16px */
+  font-weight: 700;             /* bold */
+  text-decoration: underline;
+  text-underline-offset: 4px;   /* moves the underline down a little so it doesn't touch the letters */
+  color: var(--text);
+  margin: 16px 0 4px 0;         /* space above, small gap below */
+}
+
 
 /* ===== PROJECTS ===== */
 .project {
@@ -48,7 +77,7 @@ h3 {
 
 .info {               /* the "tools · dates" line */
   color: var(--gray);
-  margin-top: 2px;
+  margin-top: 0px;
 }
 
 .tag {                /* the "In progress" label */
@@ -70,4 +99,188 @@ footer {
   color: var(--gray);
   font-size: 14px;
   margin-top: 60px;
+}
+
+/* ===== FADE IN ON SCROLL ===== */
+.js .fade {
+  opacity: 0;
+  transform: translateY(20px);              /* starts 20px lower */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .fade.visible {
+  opacity: 1;
+  transform: none;                          /* slides up into place */
+}
+
+/* Turn it off for people who set "reduce motion" on their computer */
+@media (prefers-reduced-motion: reduce) {
+  .js .fade { opacity: 1; transform: none; transition: none; }
+}
+
+
+figure {
+  margin: 0 0 14px 0;      /* removes the browser's default side indent */
+}
+
+figure img,
+figure video {
+  display: block;
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  margin: 0 auto;          /* centres the video/image */
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+figcaption {
+  color: var(--gray);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-top: 10px;
+}
+
+figcaption::before {
+  content: "";
+  display: block;
+  width: 32px;              /* short line */
+  height: 2px;
+  background: var(--accent);
+  margin: 0 auto 8px auto;  /* centred, with space below it */
+  border-radius: 2px;
+}
+
+
+/* ===== PHOTO GALLERY ===== */
+.gallery-main {
+  position: relative;               /* lets the arrows sit on top of the photo */
+  background: #0a0e11;              /* dark box behind photos of different shapes */
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-big {
+  width: 100%;
+  height: 380px;                    /* height of the photo area */
+  max-height: none;
+  object-fit: contain;              /* shows the whole photo without stretching */
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);      /* centres the arrows vertically */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gallery-arrow:hover {
+  background: var(--accent);
+  color: var(--background);
+}
+
+.gallery-arrow.prev { left: 10px; }
+.gallery-arrow.next { right: 10px; }
+
+.gallery-thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+  overflow-x: auto;                 /* scrolls sideways if you have lots of photos */
+}
+
+.gallery-thumbs img {
+  width: 72px;
+  height: 54px;
+  max-height: none;
+  object-fit: cover;                /* crops thumbnails to the same size */
+  margin: 0;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  opacity: 0.5;                     /* dim when not selected */
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.gallery-thumbs img.active {
+  opacity: 1;
+  border-color: var(--accent);      /* green outline on the current photo */
+}
+
+
+/* ===== LABEL + BRACKET + LIST ROWS ===== */
+.row {
+  display: flex;               /* puts the label and list side by side */
+  align-items: center;         /* label lines up with the middle of the list */
+  gap: 20px;
+  margin: 18px 0;
+}
+
+.row-label {
+  flex: 0 0 120px;             /* label column is 120px wide */
+  text-align: right;
+  margin: 0;
+}
+
+.row-list {
+  position: relative;
+  margin: 0;
+  padding: 4px 0 4px 28px;
+  list-style: none;            /* removes normal bullets */
+}
+
+/* The bracket is drawn as a top half and a bottom half */
+.row-list::before,
+.row-list::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 12px;
+  height: 50%;
+  border-left: 2px solid var(--accent);
+  transform: translateX(-10px);
+}
+
+.row-list::before {           /* top half, curves at the top */
+  top: 0;
+  border-top: 2px solid var(--accent);
+  border-top-left-radius: 12px;
+}
+
+.row-list::after {            /* bottom half, curves at the bottom */
+  bottom: 0;
+  border-bottom: 2px solid var(--accent);
+  border-bottom-left-radius: 12px;
+}
+
+.row-list li::before {        /* green dash in front of each item */
+  content: "– ";
+  color: var(--accent);
+}
+
+/* On phones, stack the label above the list */
+@media (max-width: 500px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .row-label {
+    flex: none;
+    text-align: left;
+  }
 }

@@ -11,8 +11,7 @@
   <!-- ===== ABOUT ME ===== -->
   <header>
     <h1>Hi, I'm Anthony. 👋 </h1>
-    <p> Welcome to my engineering portfolio!</p>
-    <p>Electrical Engineering (Co-op) student at Toronto Metropolitan University.</p>
+    <p> Welcome to my engineering portfolio! I'm an Electrical Engineering (Co-op) student at Toronto Metropolitan University.</p>
     <p><strong>Seeking a 16-month co-op: May 2027 – August 2028</strong></p>
     <p>
       <a href="mailto:anthony.ma@torontomu.ca">anthony.ma@torontomu.ca</a> ·
@@ -29,16 +28,121 @@
   <!-- To add a project: copy everything from <div class="project"> to its </div>,
        paste it below the others, and change the text. -->
 
+
+<! -- remote-controlled scavenger robot -->
+  <div class="project">
+    <h3>Remote-Controlled Scavenger Robot</h3>
+    <p class="info">TMU Takeoff Competition · Oct 2024 – Apr 2025</p>
+
+    
+    <figure>
+      <video src="images/BlockBot_Demo.mov" controls muted playsinline></video>
+      <figcaption>BlockBot picking up a scoring block during a trial</figcaption>
+    </figure>
+
+    <figure class="gallery">
+      <div class="gallery-main">
+        <button class="gallery-arrow prev" aria-label="Previous photo">‹</button>
+        <img class="gallery-big" src="images/scavengerbot_1.jpg" alt="Scavenger robot, front view">
+        <button class="gallery-arrow next" aria-label="Next photo">›</button>
+      </div>
+
+      <!-- Thumbnails: add one <img> line per photo. The alt text becomes the caption. -->
+      <div class="gallery-thumbs">
+        <img src="images/scavengerbot_2.jpg" alt="Full robot CAD design">
+        <img src="images/scavengerbot_4.png" alt="Arm Close-up">
+        <img src="images/scavengerbot_3.jpg" alt="ESP32 Arduino Code and Connections">
+        <img src="images/scavengerbot_1.jpg" alt="Team Picture and Competition Results">
+      </div>
+
+      <figcaption></figcaption>
+    </figure>
+
+    <div class="row">
+      <h4 class="row-label">Goals</h4>
+      <ul class="row-list">
+        <li>Collect and push varying sized blocks</li>
+        <li>1v1 format</li>
+        <li>Score the most points</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <h4 class="row-label">My tasks</h4>
+      <ul class="row-list">
+        <li>Designed the arm and claw</li>
+        <li>Integrated controller support with the ESP32</li>
+        <li>Troubleshot performance issues on competition day</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <h4 class="row-label">Takeaways</h4>
+      <ul class="row-list">
+        <li>CADing functional components</li>
+        <li>Problem solving on the spot</li>
+        <li>Wiring and controlling motors and servos through a microcontroller</li>
+      </ul>
+    </div>
+
+  </div>
+
+
+
+    <!-- 8-bit general-purpose processor -->
   <div class="project">
     <h3>8-bit General-Purpose Processor</h3>
     <p class="info">VHDL, Intel Quartus II · Oct – Nov 2025</p>
-    <ul>
-      <li>Wrote VHDL for 8-bit registers, a 4-to-16 decoder, and a finite state machine.</li>
-      <li>Designed an 8-bit ALU for addition, subtraction, and bitwise logic.</li>
-      <li>Tested the design with waveform simulations in Quartus II.</li>
-    </ul>
+
+    <figure class="gallery">
+      <div class="gallery-main">
+        <button class="gallery-arrow prev" aria-label="Previous photo">‹</button>
+        <img class="gallery-big" src="images/processor_1.png" alt="Full block schematic of the processor with injected test signals">
+        <button class="gallery-arrow next" aria-label="Next photo">›</button>
+      </div>
+
+      <div class="gallery-thumbs">
+        <img src="images/processor_1.png" alt="Full block schematic of the processor with injected test signals">
+        <img src="images/processor_2.png" alt="Waveform for the injected test signals">
+      </div>
+
+      <figcaption></figcaption>
+    </figure>
+
+    <div class="row">
+      <h4 class="row-label">Goals</h4>
+      <ul class="row-list">
+        <li>Design a simple 8-bit processor in VHDL</li>
+        <li>Perform arithmetic and logic operations on 8-bit data</li>
+        <li>Verify that the design works through simulation</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <h4 class="row-label">My tasks</h4>
+      <ul class="row-list">
+        <li>Wrote VHDL for the 8-bit storage registers and a 4-to-16 decoder</li>
+        <li>Built a synchronous finite state machine to control the processor</li>
+        <li>Designed an 8-bit ALU for addition, subtraction and bitwise logic</li>
+        <li>Tested the design with waveform simulations in Quartus II</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <h4 class="row-label">Takeaways</h4>
+      <ul class="row-list">
+        <li>Breaking a large design into small, reusable VHDL modules</li>
+        <li>How a state machine controls the steps a processor goes through</li>
+        <li>Reading timing waveforms to find and fix bugs</li>
+      </ul>
+    </div>
   </div>
 
+
+
+
+
+  <!-- 3-stage CMOS amplifier -->
   <div class="project">
     <h3>3-Stage CMOS Amplifier</h3>
     <p class="info">KiCad, SPICE · Oct – Dec 2025</p>
@@ -50,16 +154,6 @@
   </div>
 
   <div class="project">
-    <h3>Remote-Controlled Scavenger Robot</h3>
-    <p class="info">ESP32, L298N, SolidWorks · Oct 2024 – Apr 2025</p>
-    <ul>
-      <li>Placed 2nd of 15 teams in a timed retrieval competition.</li>
-      <li>Built the electrical system: ESP32, L298N motor drivers, DC motors, and servos on a 7.4 V LiPo.</li>
-    </ul>
-    <!-- To add a photo: put the image in your folder, then add:  <img src="robot.jpg" alt="Scavenger robot"> -->
-  </div>
-
-  <div class="project">
     <h3>Autonomous Maze-Solving Robot <span class="tag">In progress</span></h3>
     <p class="info">HCS12 Assembly · Nov – Dec 2026</p>
     <p>A robot that finds its way through a maze and remembers the correct path. Course project for COE538.</p>
@@ -68,12 +162,12 @@
 
   <!-- ===== EXPERIENCE ===== -->
   <h2>Experience</h2>
-
   <div class="project">
     <h3>Toronto Metropolitan Formula Racing</h3>
     <p class="info">Low-Voltage Subsystem, Formula SAE Electric · Sept 2025 – Present</p>
     <ul>
       <li>Soldered and assembled sensor PCBs for battery-pack integration.</li>
+      <li>Designed a PCB for a battery-pack current sensor using KiCad.</li>
     </ul>
   </div>
 
@@ -88,6 +182,54 @@
   <footer>
     <p>Last updated November 2026</p>
   </footer>
+
+    <script>
+    // Mark the page as having JavaScript (so text never stays hidden if this script fails)
+    document.documentElement.classList.add("js");
+
+    // Pick what should fade in: section headings and project blocks
+    const items = document.querySelectorAll("h2, .project");
+
+    // Watch for each item entering the screen
+    const watcher = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          watcher.unobserve(entry.target);   // only animate once
+        }
+      });
+    }, { threshold: 0.15 });                  // starts when 100% of it is visible
+
+    items.forEach((item) => {
+      item.classList.add("fade");
+      watcher.observe(item);
+    });
+
+        // ===== PHOTO GALLERY =====
+    document.querySelectorAll(".gallery").forEach((gallery) => {
+      const big = gallery.querySelector(".gallery-big");
+      const thumbs = gallery.querySelectorAll(".gallery-thumbs img");
+      const caption = gallery.querySelector("figcaption");
+      let current = 0;
+
+      function show(n) {
+        current = (n + thumbs.length) % thumbs.length;   // wraps around at the ends
+        big.src = thumbs[current].src;
+        big.alt = thumbs[current].alt;
+        if (caption) caption.textContent = thumbs[current].alt;
+        thumbs.forEach((t, k) => t.classList.toggle("active", k === current));
+      }
+
+      gallery.querySelector(".prev").addEventListener("click", () => show(current - 1));
+      gallery.querySelector(".next").addEventListener("click", () => show(current + 1));
+      thumbs.forEach((t, k) => t.addEventListener("click", () => show(k)));
+
+      show(0);   // start on the first photo
+    });
+
+
+  </script>
+
 
 </body>
 </html>
